@@ -1,9 +1,9 @@
 # Cubes Without Borders
 
 > [!WARNING]
-> This forked repo is for my personal use.
-> This is a version of Cubes Without Borders with special resolution settings. It is designed for ultra-wide (5120x1440) resolution.
-> You can access the settings via ModMenu.
+> This forked repo is for my personal use. <br>
+> This is a version of Cubes Without Borders with special resolution settings. It is designed for ultra-wide (5120x1440) resolution. <br>
+> You can access the settings via ModMenu. <br>
 > Errors may occur and are at your own risk.
 
 
