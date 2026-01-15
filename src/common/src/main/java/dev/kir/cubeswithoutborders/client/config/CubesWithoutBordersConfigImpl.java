@@ -37,6 +37,15 @@ class CubesWithoutBordersConfigImpl implements CubesWithoutBordersConfig {
     @Expose
     private MonitorInfo preferredMonitor;
 
+    @Expose
+    private boolean letterboxEnabled;
+
+    @Expose
+    private int customRenderWidth;
+
+    @Expose
+    private int customRenderHeight;
+
 
     public CubesWithoutBordersConfigImpl() {
         this.fullscreenMode = FullscreenMode.OFF;
@@ -44,6 +53,9 @@ class CubesWithoutBordersConfigImpl implements CubesWithoutBordersConfig {
         this.fullscreenType = FullscreenTypes.exclusive();
         this.borderlessFullscreenType = FullscreenTypes.borderless();
         this.preferredMonitor = MonitorInfo.primary();
+        this.letterboxEnabled = false;
+        this.customRenderWidth = 2560;
+        this.customRenderHeight = 1440;
     }
 
     public static CubesWithoutBordersConfigImpl loadNamed(String name) {
@@ -113,6 +125,40 @@ class CubesWithoutBordersConfigImpl implements CubesWithoutBordersConfig {
     public void setPreferredMonitor(MonitorInfo monitor) {
         this.preferredMonitor = monitor == null ? MonitorInfo.primary() : monitor;
     }
+
+    // Special Options
+
+    @Override
+    public boolean isLetterboxEnabled() {
+        return this.letterboxEnabled;
+    }
+
+    @Override
+    public void setLetterboxEnabled(boolean enabled) {
+        this.letterboxEnabled = enabled;
+    }
+
+    @Override
+    public int getCustomRenderWidth() {
+        return this.customRenderWidth;
+    }
+
+    @Override
+    public void setCustomRenderWidth(int width) {
+        this.customRenderWidth = width;
+    }
+
+    @Override
+    public int getCustomRenderHeight() {
+        return this.customRenderHeight;
+    }
+
+    @Override
+    public void setCustomRenderHeight(int height) {
+        this.customRenderHeight = height;
+    }
+
+    // Special Options end
 
     @Override
     public void save() {

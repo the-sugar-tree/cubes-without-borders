@@ -1,7 +1,10 @@
 package dev.kir.cubeswithoutborders.client.compat.cloth;
 
+import dev.kir.cubeswithoutborders.client.FullscreenManager;
+import dev.kir.cubeswithoutborders.client.FullscreenMode;
 import dev.kir.cubeswithoutborders.client.FullscreenType;
 import dev.kir.cubeswithoutborders.client.FullscreenTypes;
+import dev.kir.cubeswithoutborders.client.ResizableGameRenderer;
 import dev.kir.cubeswithoutborders.client.config.CubesWithoutBordersConfig;
 import me.shedaniel.clothconfig2.api.ConfigBuilder;
 import me.shedaniel.clothconfig2.api.ConfigCategory;
@@ -62,6 +65,60 @@ public final class ClothConfigScreen {
             .setSelections(fullscreenTypeSelections)
             .setSaveConsumer(x -> FullscreenTypes.get(x).ifPresent(config::setBorderlessFullscreenType))
             .build());
+
+        // Letterbox Mode
+        Text letterboxEnabledText = Text.translatable("options.letterboxEnabled");
+        boolean currentLetterboxEnabled = config.isLetterboxEnabled();
+        category.addEntry(entries
+            .startBooleanToggle(letterboxEnabledText, currentLetterboxEnabled)
+            .setDefaultValue(false)
+            .setTooltip(Text.translatable("options.letterboxEnabled.tooltip"))
+            .setSaveConsumer(config::setLetterboxEnabled)
+            .build());
+
+        // Custom Render Width
+        Text customRenderWidthText = Text.translatable("options.customRenderWidth");
+        int currentCustomRenderWidth = config.getCustomRenderWidth();
+        category.addEntry(entries
+            .startIntField(customRenderWidthText, currentCustomRenderWidth)
+            .setDefaultValue(2560)
+            .setMin(640)
+            .setMax(7680)
+            .setTooltip(Text.translatable("options.customRenderWidth.tooltip"))
+            .setSaveConsumer(config::setCustomRenderWidth)
+            .build());
+
+        // Custom Render Height
+        Text customRenderHeightText = Text.translatable("options.customRenderHeight");
+        int currentCustomRenderHeight = config.getCustomRenderHeight();
+        category.addEntry(entries
+            .startIntField(customRenderHeightText, currentCustomRenderHeight)
+            .setDefaultValue(1440)
+            .setMin(480)
+            .setMax(4320)
+            .setTooltip(Text.translatable("options.customRenderHeight.tooltip"))
+            .setSaveConsumer(config::setCustomRenderHeight)
+            .build());
+
+        builder.setSavingRunnable(() -> {
+            config.save();
+
+            // Apply letterbox settings immediately if in borderless fullscreen
+            FullscreenManager manager = FullscreenManager.getInstance();
+            if (manager.getFullscreenMode() == FullscreenMode.BORDERLESS) {
+                ResizableGameRenderer renderer = ResizableGameRenderer.getInstance();
+                if (config.isLetterboxEnabled()) {
+                    int width = config.getCustomRenderWidth();
+                    int height = config.getCustomRenderHeight();
+                    if (width > 0 && height > 0) {
+                        renderer.resize(width, height, true);
+                    }
+                } else if (renderer.isLetterboxEnabled()) {
+                    // Letterbox was enabled but now disabled - turn it off
+                    renderer.disable();
+                }
+            }
+        });
 
         return builder.build();
     }

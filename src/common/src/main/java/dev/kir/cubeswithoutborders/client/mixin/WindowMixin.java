@@ -163,6 +163,17 @@ abstract class WindowMixin implements FullscreenManager {
         VideoMode videoMode = monitor.findClosestVideoMode(this.fullscreenVideoMode);
         this.currentFullscreenType.enable(window, monitor, videoMode);
 
+        // Check if letterbox mode is enabled in config
+        if (config.isLetterboxEnabled() && this.borderless) {
+            int customWidth = config.getCustomRenderWidth();
+            int customHeight = config.getCustomRenderHeight();
+            if (customWidth > 0 && customHeight > 0) {
+                ResizableGameRenderer.getInstance().resize(customWidth, customHeight, true);
+                ci.cancel();
+                return;
+            }
+        }
+
         // If the current fullscreen type could not switch
         // the video mode, fall back to software scaling.
         int targetWidth = videoMode.getWidth();

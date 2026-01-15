@@ -5,5 +5,11 @@
   "options.borderlessFullscreen": "Borderless",
   "options.pauseOnLostFocus": "Pause On Lost Focus",
   "options.fullscreenType": "Fullscreen Type",
-  "options.borderlessFullscreenType": "Borderless Fullscreen Type"
+  "options.borderlessFullscreenType": "Borderless Fullscreen Type",
+  "options.letterboxEnabled": "Enable Letterbox Mode",
+  "options.letterboxEnabled.tooltip": "Render the game at a custom resolution with black bars. Prevents stretching on ultrawide displays.",
+  "options.customRenderWidth": "Render Width",
+  "options.customRenderWidth.tooltip": "Internal rendering width (e.g., 2560 for ultrawide). Requires letterbox mode enabled.",
+  "options.customRenderHeight": "Render Height",
+  "options.customRenderHeight.tooltip": "Internal rendering height (e.g., 1440). Requires letterbox mode enabled."
 }

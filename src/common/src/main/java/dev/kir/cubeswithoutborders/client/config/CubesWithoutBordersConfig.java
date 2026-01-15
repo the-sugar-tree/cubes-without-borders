@@ -37,6 +37,23 @@ public interface CubesWithoutBordersConfig {
 
     void setPreferredMonitor(MonitorInfo monitor);
 
+    // Special Options
+
+    boolean isLetterboxEnabled();
+
+    void setLetterboxEnabled(boolean enabled);
+
+
+    int getCustomRenderWidth();
+
+    void setCustomRenderWidth(int width);
+
+
+    int getCustomRenderHeight();
+
+    void setCustomRenderHeight(int height);
+
+    // Special Options end
 
     void save();
 }
