@@ -1,5 +1,12 @@
 # Cubes Without Borders
 
+> [!WARNING]
+> This forked repo is for my personal use.
+> This is a version of Cubes Without Borders with special resolution settings. It is designed for ultra-wide (5120x1440) resolution.
+> You can access the settings via ModMenu.
+> Errors may occur and are at your own risk.
+
+
 [![Build Status](https://img.shields.io/github/actions/workflow/status/Kir-Antipov/cubes-without-borders/build.yml?logo=github)](https://github.com/Kir-Antipov/cubes-without-borders/actions/workflows/build.yml)
 [![Version](https://img.shields.io/github/v/release/Kir-Antipov/cubes-without-borders?sort=date&label=version)](https://github.com/Kir-Antipov/cubes-without-borders/releases/latest)
 [![Modrinth](https://img.shields.io/modrinth/dt/cubes-without-borders?color=00AF5C&logo=modrinth)](https://modrinth.com/mod/cubes-without-borders)
