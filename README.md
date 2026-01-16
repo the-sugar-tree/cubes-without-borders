@@ -6,6 +6,18 @@
 > You can access the settings via ModMenu. <br>
 > Errors may occur and are at your own risk.
 
+---
+
+## Downloads (Custom Builds)
+
+- **Minecraft 1.21.5** → [Download](https://github.com/the-sugar-tree/cubes-without-borders/releases/tag/3.1.0-letterbox%2B1.21.5)
+- **Minecraft 1.21.10** → [Download](https://github.com/the-sugar-tree/cubes-without-borders/releases/tag/3.1.0-letterbox%2B1.21.10)
+
+---
+
+> ⚠️ **From this point onward, the content below is the original README.md from the upstream project.**
+
+---
 
 [![Build Status](https://img.shields.io/github/actions/workflow/status/Kir-Antipov/cubes-without-borders/build.yml?logo=github)](https://github.com/Kir-Antipov/cubes-without-borders/actions/workflows/build.yml)
 [![Version](https://img.shields.io/github/v/release/Kir-Antipov/cubes-without-borders?sort=date&label=version)](https://github.com/Kir-Antipov/cubes-without-borders/releases/latest)
