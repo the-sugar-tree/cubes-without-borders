@@ -10,8 +10,7 @@
 
 ## Downloads (Custom Builds)
 
-- **Minecraft 1.21.5** → [Download](https://github.com/the-sugar-tree/cubes-without-borders/releases/tag/3.1.0-letterbox%2B1.21.5)
-- **Minecraft 1.21.10** → [Download](https://github.com/the-sugar-tree/cubes-without-borders/releases/tag/3.1.0-letterbox%2B1.21.10)
+- **Minecraft 1.21.10** → [Download](https://github.com/the-sugar-tree/cubes-without-borders/releases/tag/3.1.1-letterbox%2B1.21.10)
 
 ---
 
